@@ -32,7 +32,7 @@
      
     print "<pre>";
     print "<h3>MY Response Data</h3>";
-    //print_r($http_request->getResponse());   
+    print_r($http_request->getResponse());   
     //print_r($http_request->getResponseCode());   
     print_r($http_request->getResponseContent());   
     print "</pre>";
