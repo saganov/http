@@ -37,6 +37,8 @@ class HttpServer extends HttpResponse{
         curl_setopt($this->ch, CURLOPT_URL, $this->url);
         $this->{'run_'.strtolower($method)}();        
         curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, $method);
+        curl_setopt($this->ch, CURLOPT_HTTPHEADER, $this->headers);
+        curl_setopt($this->ch, CURLOPT_HTTP_VERSION, "CURL_HTTP_VERSION_" . str_replace(".", "_", $this->options['version']));
         curl_setopt($this->ch, CURLOPT_HEADER, 1); // get the header
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, 1); // get the response as a string from curl_exec(), rather than echoing it
         curl_setopt($this->ch, CURLOPT_FRESH_CONNECT, 1); // don't use a cached version of the url

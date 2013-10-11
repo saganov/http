@@ -10,7 +10,10 @@
         'url' => 'http://localhost/http/test.php',
         'method' => 'post',
         'version' => '1.0',
-        'params' => array('firstname'=>'Vacya', 'surname'=>'Ivanov')
+        'params' => array('firstname'=>'Vacya', 'surname'=>'Ivanov'),
+        'headers' => array(
+            'Content-Length: 500',            
+        )
     );
            
     $http_request = new HttpRequest();    

@@ -3,6 +3,7 @@ require_once 'HttpServer.class.php';
 
 class HttpRequest extends HttpServer{    
     public $options;
+    public $headers;
     
     function __construct() {
         $this->options = array(
@@ -10,6 +11,9 @@ class HttpRequest extends HttpServer{
             'method' => 'GET',
             'version' => '1.0',
             'params' => array()
+        );
+        $this->headers = array(      
+            'Content-Length: 500',            
         );
     }
     
